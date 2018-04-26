@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  html, body {
+    background: #eee;
+  }
+
+  .box {
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+
+  .demo-item {
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    background: #6190e8;
+    text-align: center;
+    line-height: 90px;
+    font-size: 20px;
+    color: white;
+  }
+  #startBtn {
+    padding: 10px 20px;
+  }
+  .active {
+    background:green;
+    margin-left: 500px;
+  }
+  .demo-item-2 {
+    transition: all ease 2s;
+  }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="demo-item demo-item-1">1</div>    
+  </div>
+  <div class="box">
+    <div class="demo-item demo-item-2">2</div>
+  </div>
+  <div class="box">
+    <button id="startBtn">开始</button>
+  </div>
+  <script>
+  const btn = document.querySelector('#startBtn');
+  const item1 = document.querySelector('.demo-item-1');
+  const item2 = document.querySelector('.demo-item-2');
+  
+  btn.addEventListener('click', function() {
+    item1.classList.add('active');
+    item2.classList.add('active');
+  }, false);
+  </script>
+</body>
+</html>

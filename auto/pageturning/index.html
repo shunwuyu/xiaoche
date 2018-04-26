@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>翻书demo</title>
+  <link rel="stylesheet" href="./css.css">
+</head>
+<body>
+  <div class="box">
+    <div class="book">
+      <div id="page2" class="page" data-page="2">
+        <div class="page_front page_2">2</div>
+        <div class="page_back page_3">3</div>
+      </div>
+      <div id="page1" class="page" data-page="1">
+        <div class="page_front page_cover">Cover</div>
+        <div class="page_back page_1">1</div>
+      </div>
+    </div>
+  </div>
+  <a href="javascript:;" class="button">翻书</a>
+  <script>
+    var btn = document.querySelector('.button'), 
+		pageNum = document.querySelectorAll('.page').length, 
+		page = 0;
+    btn.addEventListener('click', function(){
+      // console.log(page);
+      // console.log(page, pageNum);
+      if(page>0){
+        document.getElementById('page'+page).setAttribute('class', 'page');
+        page--;
+        // document.getElementById('page1').style.zIndex = -1;
+        // document.getElementById('page2').setAttribute('class', 'page page_turning');
+        // page++;
+      } else if(page == 0){
+        page += 1;
+        document.getElementById('page'+page).setAttribute('class', 'page page_turning');
+      }
+    });
+  </script>
+</body>
+</html>
